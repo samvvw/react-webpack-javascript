@@ -4,6 +4,7 @@ const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const TerserWebpackPlugin = require('terser-webpack-plugin')
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
+const ESLintPlugin = require('eslint-webpack-plugin')
 const dotenv = require('dotenv')
 
 module.exports = function (_env, argv) {
@@ -97,6 +98,10 @@ module.exports = function (_env, argv) {
             new HtmlWebpackPlugin({
                 template: path.resolve(__dirname, 'public/index.html'),
                 inject: true,
+            }),
+            new ESLintPlugin({
+                extensions: ['.js', '.jsx'],
+                exclude: ['node_modules', 'dist'],
             }),
         ].filter(Boolean),
         optimization: {
