@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import './style.css'
 
 function App() {
@@ -12,6 +12,7 @@ function App() {
     return (
         <div className="App">
             <h1>Welcome to Coffee Connect by Javalimos the best team ever</h1>
+            <p>Updated...</p>
         </div>
     )
 }

@@ -4,16 +4,22 @@ module.exports = {
         node: true,
     },
     plugins: ['react'],
+    settings: {
+        react: {
+            version: 'detect',
+        },
+    },
     parser: '@babel/eslint-parser',
-    // parserOptions: {
-    //     ecmaFeatures: {
-    //         jsx: true,
-    //     },
-    // },
+    parserOptions: {
+        ecmaFeatures: {
+            jsx: true,
+        },
+    },
     extends: [
         'eslint:recommended',
         'plugin:react/recommended',
         'plugin:react-hooks/recommended',
+        'plugin:react/jsx-runtime',
     ],
     rules: {
         'react-hooks/rules-of-hooks': 'error',
