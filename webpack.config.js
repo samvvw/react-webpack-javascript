@@ -155,7 +155,10 @@ module.exports = function (_env, argv) {
             historyApiFallback: true,
             open: true,
             client: {
-                overlay: true,
+                overlay: {
+                    errors: true,
+                    warnings: false,
+                },
             },
         },
     }
