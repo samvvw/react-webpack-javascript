@@ -3,7 +3,7 @@ module.exports = {
         [
             '@babel/preset-env',
             {
-                modules: false,
+                modules: 'auto',
             },
         ],
         [
@@ -15,8 +15,8 @@ module.exports = {
     ],
     plugins: [
         '@babel/plugin-transform-runtime',
-        '@babel/plugin-syntax-dynamic-import',
-        '@babel/plugin-proposal-class-properties',
+        // '@babel/plugin-syntax-dynamic-import',
+        // '@babel/plugin-proposal-class-properties',
     ],
     env: {
         production: {
