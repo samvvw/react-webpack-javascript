@@ -16,9 +16,11 @@ module.exports = function (_env, argv) {
     let envKeys
     if (env) {
         envKeys = Object.keys(env).reduce((prev, next) => {
-            prev[`process.env.${next}`] = JSON.stringify(env[next])
+            if (next.startsWith('REACT_ENV_'))
+                prev[`process.env.${next}`] = JSON.stringify(env[next])
             return prev
         }, {})
+        console.log(envKeys)
     } else {
         envKeys = {}
     }
